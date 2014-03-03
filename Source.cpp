@@ -17,7 +17,7 @@
 char hide(char* string, char ch);
 
 /*
-	*@brief	This function prints information about the program on the console.
+	*@brief	This function prints information about the program to the console.
 */
 void info();
 
@@ -65,7 +65,7 @@ void info()
 	for (i = 0; i < 10; ++i)
 		printf("-");
 	puts("\nWordhider v1.0");
-	puts("\nThis program hides words that contain specified character in the text you \nenter.");
+	puts("\nThis genial program hides words that contain specified character in the text \nyou enter.");
 	puts("\nTsybran Vitalii 2014 All rigths reserved.");
 	for (i = 0; i < 10; ++i)
 		printf("-");
