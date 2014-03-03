@@ -8,7 +8,7 @@
 
 
 /*
-	*@brief	This function hides all words containing inputed character int hte inputed string and prints it out.
+	*@brief	This function hides all words containing inputed character in the inputed string and prints it out.
 			The inputed string is modified.
 	*@param	[in]	char* Pointer to the string
 	*@param	[in]	ch Character words containig wich shall be hidden
@@ -16,12 +16,17 @@
 */
 char hide(char* string, char ch);
 
+/*
+	*@brief	This function prints information about the program on the console.
+*/
+void info();
+
 
 int main()
 {
 	char s[LENGTH];
-	//char a;
-	printf("Enter some text:\n");
+	info();
+	printf("\nEnter some text:\n");
 	gets(s);
 	printf("Enter a character. All words containing this character will be hidden.\n");
 	hide(s, getchar());
@@ -39,7 +44,7 @@ char hide(char* string, char ch)
 		{
 			if (strchr(token, ch) != NULL)
 			{
-				for (unsigned char i = 0; i < strlen(token); ++i)
+				for (unsigned i = 0; i < strlen(token); ++i)
 				{
 					if (!((*(token + i)) >= 33 && (*(token + i) <= 63)))
 					{
@@ -51,6 +56,18 @@ char hide(char* string, char ch)
 			token = strtok(NULL, " ");
 		}
 		return OK;
-	
-	
+}
+
+
+void info()
+{
+	unsigned i;
+	for (i = 0; i < 10; ++i)
+		printf("-");
+	puts("\nWordhider v1.0");
+	puts("\nThis program hides words that contain specified character in the text you \nenter.");
+	puts("\nTsybran Vitalii 2014 All rigths reserved.");
+	for (i = 0; i < 10; ++i)
+		printf("-");
+	printf("\n");
 }
